@@ -3,6 +3,7 @@ package org.usfirst.frc.team4.robot;
 
 import org.usfirst.frc.team4.robot.subsystems.Chassis;
 import org.usfirst.frc.team4.robot.subsystems.Elevator;
+import org.usfirst.frc.team4.robot.subsystems.PIDElevator;
 import org.usfirst.frc.team4.robot.subsystems.Pneumatics;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
@@ -22,6 +23,7 @@ public class Robot extends IterativeRobot {
 	public static OI oi;
 	public static Chassis chassis;
 	public static Elevator elevator;
+	public static PIDElevator Pelevator;
 	public static Pneumatics pneumatics;
 
     Command autonomousCommand;

@@ -29,6 +29,8 @@ public class Chassis extends Subsystem {
 		m_rightRwd = new VictorSP(RobotMap.CHASSIS_MOTOR_RIGHTREAR);
 		
 		drive = new RobotDrive(m_leftFwd, m_leftRwd, m_rightFwd, m_rightRwd);
+		drive.setInvertedMotor(RobotDrive.MotorType.kFrontLeft, true);
+		drive.setInvertedMotor(RobotDrive.MotorType.kRearLeft, true);
 		
 		m_leftEncoder = new Encoder(RobotMap.CHASSIS_ENCODER_LEFT_A, RobotMap.CHASSIS_ENCODER_LEFT_B);
 		//TODO add actual distance

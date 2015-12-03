@@ -26,7 +26,7 @@ public class PIDElevator extends PIDSubsystem {
         
         m_elevator = new VictorSP(RobotMap.ELEVATOR_MOTOR);
         //TODO Find actual type; Find actual scaling
-        m_pot = new AnalogPotentiometer(RobotMap.ELEVATOR_POTENTIOMETER, -.4);
+        m_pot = new AnalogPotentiometer(RobotMap.ELEVATOR_POTENTIOMETER, .4);
     }
     
     public void initDefaultCommand() {

@@ -45,6 +45,7 @@ public class RobotMap {
     CHASSIS_GYRO              = 0,
     
     CHASSIS_ENCODER_LEFT_A    = 9,
+    CHASSIS_ENCOFUN_CTIONS	  = -1,
     CHASSIS_ENCODER_LEFT_B    = 8,
          
     CHASSIS_ENCODER_RIGHT_A   = 0,
@@ -69,7 +70,7 @@ public class RobotMap {
 	PNEUMATICS_CLAW_LEFT_FWD = 4,
 	PNEUMATICS_CLAW_LEFT_RWD = 6,
 	
-	PNUEMATICS_COMPRESSOR = 8;
+	PNUEMATICS_COMPRESSOR = 1;
 
 	public static Joystick 
     driveCont,

@@ -1,6 +1,7 @@
 
 package org.usfirst.frc.team4.robot;
 
+import org.usfirst.frc.team4.robot.commands.Autonomous;
 import org.usfirst.frc.team4.robot.subsystems.Chassis;
 import org.usfirst.frc.team4.robot.subsystems.Elevator;
 import org.usfirst.frc.team4.robot.subsystems.PIDElevator;
@@ -12,11 +13,7 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 
 /**
- * The VM is configured to automatically run this class, and to call the
- * functions corresponding to each mode, as described in the IterativeRobot
- * documentation. If you change the name of this class or the package after
- * creating this project, you must also update the manifest file in the resource
- * directory.
+ * Author: Justin Punzalan
  */
 public class Robot extends IterativeRobot {
 
@@ -38,8 +35,11 @@ public class Robot extends IterativeRobot {
 		pneumatics = new Pneumatics();
 		elevator = new Elevator();
 		chassis = new Chassis();
+		chassis.reset();
         // instantiate the command used for the autonomous period
         //autonomousCommand = new ExampleCommand();
+		autonomousCommand = new Autonomous();
+		
     }
 	
 	public void disabledPeriodic() {

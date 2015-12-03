@@ -15,6 +15,7 @@ public class ToggleDrive extends Command {
     // Called just before this Command runs the first time
     protected void initialize() {
     	System.out.println("Switching to " + findMode());
+    	Robot.chassis.tank = !Robot.chassis.tank;
     }
 
     // Called repeatedly when this Command is scheduled to run
@@ -28,7 +29,7 @@ public class ToggleDrive extends Command {
 
     // Called once after isFinished returns true
     protected void end() {
-    	Robot.chassis.tank = !Robot.chassis.tank;
+    	//Robot.chassis = new Chassis();
     }
 
     // Called when another command which requires one or more of the same

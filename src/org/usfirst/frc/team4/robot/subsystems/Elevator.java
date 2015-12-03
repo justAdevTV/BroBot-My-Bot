@@ -18,7 +18,8 @@ public class Elevator extends Subsystem {
     
     private elePos currentState;
     
-    private final int MAX_POS = 18, MIN_POS = 2;
+    // TODO Change to actual value
+    private final int MAX_POS = 90, MIN_POS = 0;
     
     private enum elePos{
     	OVER_HEIGHT,
@@ -29,7 +30,8 @@ public class Elevator extends Subsystem {
     public Elevator(){
     	m_elevator = new VictorSP(RobotMap.ELEVATOR_MOTOR);
     	//TODO Add actual scale
-    	m_pot = new AnalogPotentiometer(RobotMap.ELEVATOR_POTENTIOMETER, -.4);
+    	m_pot = new AnalogPotentiometer(RobotMap.ELEVATOR_POTENTIOMETER, .4);
+    	checkPos();
     }
     	
     public void initDefaultCommand() {
@@ -61,10 +63,16 @@ public class Elevator extends Subsystem {
     }
     
     private double limitPos(elePos p, double h){
-    	if (p == elePos.OVER_HEIGHT){
-    		h = h < 0 ? 0 : h;
+    	if(p == elePos.OVER_HEIGHT){
+    		return h = h < 0 ? 0 : h;
     	} else if (p == elePos.UNDER_HEIGHT){
-    		h = h > 0 ? 0 : h;
-    	} return h;
+    		return h = h > 0 ? 0 : h;
+    	} else {
+    		return h;
+    	}
+    }
+    
+    public double getStep(){
+    	return m_pot.get();
     }
 }

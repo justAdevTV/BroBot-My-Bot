@@ -22,40 +22,30 @@ public class OI {
 	public double rightX(Joystick cont){
 		double v = (cont.getRawAxis(RobotMap.CONT_RX));
 		v = squareNum(v);
-		v = fixLimit(v);
 		return v;
 	}
 	
 	public double rightY(Joystick cont) {
 		double v = (cont.getRawAxis(RobotMap.CONT_RY));
 		v = squareNum(v);
-		v = fixLimit(v);
 		return v;
 	}
 
-	public double leftY(Joystick cont) {
+	public double leftX(Joystick cont) {
 		//Squared to make driving smoother
-		double v = (cont.getRawAxis(RobotMap.CONT_LY));
+		double v = (cont.getRawAxis(RobotMap.CONT_LX));
 		v = squareNum(v);
-		v = fixLimit(v);
 		return v;
 	}
 	
-	//Prevents unwanted movement
-	public double fixLimit(double v){
-		if (v > -.1 || v < .1){
-			return 0;
-		} else if (v > .9){
-			return 1;
-		} else if (v < -.9){
-			return -1;
-		} else {
-			return v;
-		}
+	public double leftY(Joystick cont) {
+		double v = (cont.getRawAxis(RobotMap.CONT_LY));
+		v = squareNum(v);
+		return v;
 	}
 	
 	//Squared to make driving smoother
 	public double squareNum(double v){
-		return (v*Math.abs(v));
+		return (v*Math.abs(v)*.75);
 	}
 }

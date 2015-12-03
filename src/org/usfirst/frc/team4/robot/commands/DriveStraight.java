@@ -13,8 +13,8 @@ import edu.wpi.first.wpilibj.command.Command;
 public class DriveStraight extends Command {
 	private PIDController m_pid;
 
-	//TODO Add actual values
-	private final double kP = 1, kI = 1, kD = 0;
+	//TODO Make it Work
+	private final double kP = 1/54, kI = 1, kD = 0;
 
 	public DriveStraight(double distance) {
 		requires(Robot.chassis);
@@ -25,10 +25,10 @@ public class DriveStraight extends Command {
 			}
 		}, new PIDOutput() {
 			public void pidWrite(double d) {
-				Robot.chassis.tankDrive(d, d);
+				Robot.chassis.tankDrive(-d*.50, -d*.50);
 			}
 		});
-		//TODO Add actual tolerance
+		
 		m_pid.setAbsoluteTolerance(.05);
 		m_pid.setSetpoint(distance);
 	}
@@ -53,6 +53,7 @@ public class DriveStraight extends Command {
 	protected void end() {
 		m_pid.disable();
 		Robot.chassis.tankDrive(0,0);
+		Robot.chassis.reset();
 	}
 
 	// Called when another command which requires one or more of the same

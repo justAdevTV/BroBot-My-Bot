@@ -20,7 +20,7 @@ public class ArcadeDrive extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.chassis.tankDrive(Robot.oi.rightX(RobotMap.driveCont), Robot.oi.rightY(RobotMap.driveCont));
+    	Robot.chassis.arcadeDrive(Robot.oi.leftX(RobotMap.driveCont), Robot.oi.leftY(RobotMap.driveCont));
     }
 
     // Make this return true when this Command no longer needs to run execute()

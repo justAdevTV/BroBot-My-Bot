@@ -4,7 +4,6 @@ package org.usfirst.frc.team4.robot;
 import org.usfirst.frc.team4.robot.commands.Autonomous;
 import org.usfirst.frc.team4.robot.subsystems.Chassis;
 import org.usfirst.frc.team4.robot.subsystems.Elevator;
-import org.usfirst.frc.team4.robot.subsystems.PIDElevator;
 import org.usfirst.frc.team4.robot.subsystems.Pneumatics;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
@@ -20,7 +19,6 @@ public class Robot extends IterativeRobot {
 	public static OI oi;
 	public static Chassis chassis;
 	public static Elevator elevator;
-	public static PIDElevator Pelevator;
 	public static Pneumatics pneumatics;
 
     Command autonomousCommand;
@@ -36,6 +34,7 @@ public class Robot extends IterativeRobot {
 		elevator = new Elevator();
 		chassis = new Chassis();
 		chassis.reset();
+		pneumatics.compStart();
         // instantiate the command used for the autonomous period
         //autonomousCommand = new ExampleCommand();
 		autonomousCommand = new Autonomous();

@@ -21,7 +21,7 @@ public class Lift extends Command {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
     	Robot.elevator.eleVator(Robot.oi.leftY(RobotMap.opCont));
-    	//System.out.println(Robot.elevator.getStep());
+    	System.out.println(Robot.elevator.getStep());
     }
 
     // Make this return true when this Command no longer needs to run execute()

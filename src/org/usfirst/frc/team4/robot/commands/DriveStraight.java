@@ -13,11 +13,11 @@ import edu.wpi.first.wpilibj.command.Command;
 public class DriveStraight extends Command {
 	private PIDController m_pid;
 
-	//TODO Make it Work
-	private final double kP = 1/54, kI = 1, kD = 0;
+	private final double kP = 1/54, kI = 50, kD = 0;
 
 	public DriveStraight(double distance) {
 		requires(Robot.chassis);
+		
 		// TODO add PID
 		m_pid = new PIDController(kP, kI, kD, new PIDSource() {
 			public double pidGet() {

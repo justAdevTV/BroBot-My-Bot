@@ -1,7 +1,5 @@
 package org.usfirst.frc.team4.robot.commands.autoelevate;
 
-import org.usfirst.frc.team4.robot.Robot;
-
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
@@ -9,17 +7,17 @@ import edu.wpi.first.wpilibj.command.Command;
  */
 public class SetElevatorPos extends Command {
 
-	private double setPos;
+	//private double setPos;
 	
     public SetElevatorPos(double setPos) {
-        this.setPos = setPos;
-    	requires(Robot.Pelevator);
+      //  this.setPos = setPos;
+    	//requires(Robot.pelevator);
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	Robot.Pelevator.enable();
-    	Robot.Pelevator.setSetpoint(setPos);
+    	//Robot.pelevator.enable();
+    	//Robot.pelevator.setSetpoint(setPos);
     }
 
     // Called repeatedly when this Command is scheduled to run
@@ -28,7 +26,8 @@ public class SetElevatorPos extends Command {
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-    	return Robot.Pelevator.onTarget();
+    	//return Robot.pelevator.onTarget();
+    	return true;
     }
 
     // Called once after isFinished returns true

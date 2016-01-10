@@ -46,7 +46,7 @@ public class Chassis extends Subsystem {
 	}
 
 	public void tankDrive(double right, double left) {
-		drive.tankDrive(left, right, true);
+		drive.tankDrive(left, right);
 	}
 
 	public void arcadeDrive(double x, double y) {
@@ -54,7 +54,7 @@ public class Chassis extends Subsystem {
 	}
 	
 	public void gyroDrive(double speed, double angle){
-		drive.drive(speed, angle*.03);
+		drive.drive(speed, angle);
 	}
 
 	public void stop() {
@@ -66,7 +66,7 @@ public class Chassis extends Subsystem {
 	}
 	
 	public void reset(){
-		//m_gyro.reset();
+		m_gyro.reset();
 		m_leftEncoder.reset();
 	}
 	

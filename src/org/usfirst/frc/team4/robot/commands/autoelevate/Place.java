@@ -11,7 +11,7 @@ public class Place extends CommandGroup {
     
     public  Place() {
     	//TODO Add actual value
-        addSequential(new SetElevatorPos(.25));
-        addSequential(new ClawOpen());
+    	addSequential(new ClawOpen());
+        addSequential(new SetElevatorPos(-.39));
     }
 }

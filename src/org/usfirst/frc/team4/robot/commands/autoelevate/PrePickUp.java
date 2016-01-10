@@ -9,9 +9,8 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
  */
 public class PrePickUp extends CommandGroup {
     
-    public  PrePickUp() {
+    public PrePickUp() {
     	addSequential(new ClawOpen());
-    	//TODO add actual pos
-    	addSequential(new SetElevatorPos(0));
+    	addSequential(new SetHeight(-.39));
     }
 }

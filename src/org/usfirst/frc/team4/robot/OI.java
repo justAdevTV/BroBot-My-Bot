@@ -46,6 +46,6 @@ public class OI {
 	
 	//Squared to make driving smoother
 	public double squareNum(double v){
-		return (v*Math.abs(v)*.75);
+		return (v*Math.abs(v)*.85);
 	}
 }
